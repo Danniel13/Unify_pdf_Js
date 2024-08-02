@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <title>Unificar PDFs</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
+    <script src="scripts/pdf-merger.js"></script>
+    <style>
+        #fileList {
+            list-style-type: none;
+            padding: 0;
+        }
+        #fileList li {
+            margin: 5px 0;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            cursor: move;
+        }
+
+
+        @font-face {
+    font-family: 'Telegraf';
+    src: url('Fonts/PPTelegraf-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+     }
+    
+    @font-face {
+    font-family: 'Telegraf';
+    src: url('Fonts/PPTelegraf-UltraBold.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+     }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Unificador de PDFs</h1>
+        <div id="pdfForm">
+            <label>Selecciona archivos PDF:</label>
+            <input type="file" id="fileInput" multiple accept="application/pdf" />
+            
+            <button id="mergeButton">Unir PDFs</button>
+        </br> </br>
+            <label for="text"><b>Elige el orden en que quieres tus pdf:</b></label>
+            <ul id="fileList"></ul>
+            
+
+        </div>
+    </div>
+    <script>
+        document.getElementById('fileInput').addEventListener('change', handleFileSelect);
+        document.getElementById('mergeButton').addEventListener('click', mergePDFs);
+
+        function handleFileSelect(event) {
+            const fileList = document.getElementById('fileList');
+            fileList.innerHTML = '';  // Clear previous list
+            const files = event.target.files;
+            Array.from(files).forEach((file, index) => {
+                const li = document.createElement('li');
+                li.textContent = file.name;
+                li.dataset.fileIndex = index;
+                fileList.appendChild(li);
+            });
+
+            // Initialize drag and drop
+            new Sortable(fileList, {
+                animation: 150,
+                onEnd: function(evt) {
+                    const items = fileList.querySelectorAll('li');
+                    items.forEach((item, index) => {
+                        item.dataset.fileIndex = index;
+                    });
+                }
+            });
+        }
+
+        async function mergePDFs(event) {
+            // event.preventDefault();  // Prevent form submission or button default action
+
+            const fileInput = document.getElementById('fileInput');
+            const fileList = document.getElementById('fileList');
+            const files = fileInput.files;
+
+            if (files.length === 0) {
+                alert('No se han seleccionado archivos');
+                return;
+            }
+
+            const fileOrder = Array.from(fileList.children)
+                .map(li => parseInt(li.dataset.fileIndex))
+                .map(index => files[index]);
+
+            const pdfDocs = [];
+
+            // Load all selected PDFs in the order specified
+            for (const file of fileOrder) {
+                const pdfBytes = await file.arrayBuffer();
+                const pdfDoc = await PDFLib.PDFDocument.load(pdfBytes);
+                pdfDocs.push(pdfDoc);
+            }
+
+            // Create a new PDF document
+            const mergedPdf = await PDFLib.PDFDocument.create();
+
+            // Copy pages from each PDF into the new document
+            for (const pdfDoc of pdfDocs) {
+                const copiedPages = await mergedPdf.copyPages(pdfDoc, pdfDoc.getPageIndices());
+                copiedPages.forEach(page => mergedPdf.addPage(page));
+            }
+
+            // Save the merged PDF and create a download link
+            const mergedPdfBytes = await mergedPdf.save();
+            const blob = new Blob([mergedPdfBytes], { type: 'application/pdf' });
+            const url = URL.createObjectURL(blob);
+
+            // Create and click a link to download the PDF
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'merged.pdf';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            alert('Archivos Unificados');  
+            window.location.href = "index.html";
+        }
+        
+    </script>
+</body>
+</html>
