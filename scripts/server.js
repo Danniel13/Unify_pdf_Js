@@ -15,7 +15,7 @@ app.use(express.static(__dirname));
 
 // Ruta para cargar el formulario   
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index1.html'));
+    res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 // Ruta para manejar la subida de PDF, unificación y protección
