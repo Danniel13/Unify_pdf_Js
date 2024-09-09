@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="scripts/index.js"></script>
+    <title>Protector de PDF</title>
+</head>
+<body>
+    <h1>Protege tu PDF con una contraseña</h1>
+    <form action="/protect" method="post" enctype="multipart/form-data">
+        <label for="pdfFile">Selecciona un archivo PDF:</label>
+        <input type="file" name="pdfFile" id="pdfFile" required>
+        <br><br>
+        <label for="password">Ingresa una contraseña:</label>
+        <input type="password" name="password" id="password" required>
+        <br><br>
+        <button type="submit">Proteger PDF</button>
+    </form>
+
+    <!-- Incluir el archivo JavaScript -->
+    
+</body>
+</html>
