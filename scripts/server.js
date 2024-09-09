@@ -20,7 +20,7 @@ app.get('/', (req, res) => {
 
 // Ruta para manejar la subida de PDF, unificación y protección
 app.post('/unify-protect', upload.array('pdfFiles', 10), async (req, res) => {
-    const password = req.body.password || '';
+    const password = req.body.password || ''; // Puede ser una cadena vacía si no se proporciona
     const fileOrder = JSON.parse(req.body.fileOrder || '[]');
 
     console.log('File Order:', fileOrder);
@@ -33,9 +33,9 @@ app.post('/unify-protect', upload.array('pdfFiles', 10), async (req, res) => {
     const files = fileOrder.map(index => req.files[index]);
     const pdfDocs = [];
 
-    try {
-        console.log('Files:', files);
+    console.log('Files in Order:', files.map(file => file.originalname));
 
+    try {
         // Cargar los PDFs en el orden correcto
         for (const file of files) {
             const pdfBytes = fs.readFileSync(file.path);
@@ -55,28 +55,40 @@ app.post('/unify-protect', upload.array('pdfFiles', 10), async (req, res) => {
         const mergedPdfPath = path.join(__dirname, `merged_${Date.now()}.pdf`);
         fs.writeFileSync(mergedPdfPath, mergedPdfBytes);
 
-        // Proteger con contraseña
-        const protectedPdfPath = path.join(__dirname, `protected_merged_${Date.now()}.pdf`);
-        const command = `"${qpdfPath}" "${mergedPdfPath}" --encrypt ${password} ${password} 256 -- "${protectedPdfPath}"`;
+        let protectedPdfPath = mergedPdfPath;
+        
+        if (password) {
+            // Proteger con contraseña solo si se proporciona
+            protectedPdfPath = path.join(__dirname, `protected_merged_${Date.now()}.pdf`);
+            const command = `"${qpdfPath}" "${mergedPdfPath}" --encrypt ${password} ${password} 256 -- "${protectedPdfPath}"`;
 
-        console.log('Executing command:', command);
+            console.log('Executing command:', command);
 
-        // Ejecutar el comando qpdf
-        exec(command, (err) => {
-            if (err) {
-                console.error('Error al proteger el PDF:', err);
-                return res.status(500).send('Error al proteger el PDF.');
-            }
+            // Ejecutar el comando qpdf
+            exec(command, (err) => {
+                if (err) {
+                    console.error('Error al proteger el PDF:', err);
+                    return res.status(500).send('Error al proteger el PDF.');
+                }
 
-            // Descargar PDF protegido
-            res.download(protectedPdfPath, (err) => {
+                // Descargar PDF protegido
+                res.download(protectedPdfPath, (err) => {
+                    if (err) console.error('Error al enviar el PDF:', err);
+                    
+                    // Eliminar archivos temporales
+                    fs.unlinkSync(mergedPdfPath);
+                    fs.unlinkSync(protectedPdfPath);
+                });
+            });
+        } else {
+            // Si no se proporciona contraseña, simplemente devolver el PDF unificado
+            res.download(mergedPdfPath, (err) => {
                 if (err) console.error('Error al enviar el PDF:', err);
                 
                 // Eliminar archivos temporales
                 fs.unlinkSync(mergedPdfPath);
-                fs.unlinkSync(protectedPdfPath);
             });
-        });
+        }
     } catch (error) {
         console.error('Error al unificar o proteger los PDFs:', error);
         res.status(500).send('Error en el proceso de unificación/protección.');
@@ -85,6 +97,7 @@ app.post('/unify-protect', upload.array('pdfFiles', 10), async (req, res) => {
         req.files.forEach(file => fs.unlinkSync(file.path));
     }
 });
+
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
