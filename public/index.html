@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
     <style>
         #fileList {
             list-style-type: none;
@@ -32,6 +34,17 @@
 
             <label for="password">Introduce una contraseña para proteger el PDF unificado:</label>
             <input type="password" id="passwordInput" placeholder="Contraseña (opcional)" />
+
+<script>
+    $('#passwordInput').on("mousedown",function(event) {
+  $(this).attr("type","text");
+});
+
+$('#passwordInput').on("mouseup",function(event) {
+  $('#passwordInput').attr("type","password");
+});
+</script>
+            
 
             <button id="mergeButton">Unir y Proteger PDFs</button>
             <br><br>
