@@ -11,6 +11,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
+
     <style>
         #fileList {
             list-style-type: none;
@@ -31,21 +32,30 @@
         <div id="pdfForm">
             <label>Selecciona archivos PDF:</label>
             <input type="file" id="fileInput" multiple accept="application/pdf" />
+            <br>
+            <form>
+            <label for="password">Opcional: Introduce una contraseña para proteger el PDF</label>
+            <input type="password" id="passwordInput" autocomplete="off" placeholder="Contraseña (opcional)" />
+            <input type="checkbox" name="check_mostrar"  onclick='handleClick(this);'>Mostrar contraseña<br>
+            </form>
 
-            <label for="password">Introduce una contraseña para proteger el PDF unificado:</label>
-            <input type="password" id="passwordInput" placeholder="Contraseña (opcional)" />
+            <script>
+            //     $('#passwordInput').on("mousedown",function(event) {
+            // $(this).attr("type","text");
+            // });
 
-<script>
-    $('#passwordInput').on("mousedown",function(event) {
-  $(this).attr("type","text");
-});
-
-$('#passwordInput').on("mouseup",function(event) {
-  $('#passwordInput').attr("type","password");
-});
-</script>
+            // $('#passwordInput').on("mouseup",function(event) {
+            // $('#passwordInput').attr("type","password");
+            // });
+            function handleClick(cb) {
+            if(cb.checked)
+                $('#passwordInput').attr("type","text");
+            else
+                $('#passwordInput').attr("type","password");
+            }
+            </script>
             
-
+            <br>
             <button id="mergeButton">Unir y Proteger PDFs</button>
             <br><br>
             <label for="text"><b>Elige el orden en que quieres tus PDFs:</b></label>
@@ -124,6 +134,7 @@ $('#passwordInput').on("mouseup",function(event) {
                     link.click();
                     document.body.removeChild(link);
                     alert('PDF unificado y protegido descargado correctamente.');
+                    location.href ='index.html';
                 } else {
                     alert('Hubo un problema al unificar o proteger los PDFs.');
                 }
