@@ -24,3 +24,15 @@ Stack: Error: Input document to `PDFDocument.load` is encrypted. You can use `PD
     at step (C:\xampp\htdocs\Unifi_pdf_JS\node_modules\tslib\tslib.js:141:27)
     at Object.next (C:\xampp\htdocs\Unifi_pdf_JS\node_modules\tslib\tslib.js:122:57)
     at fulfilled (C:\xampp\htdocs\Unifi_pdf_JS\node_modules\tslib\tslib.js:112:62)
+Error al unificar o proteger los PDFs: Failed to parse PDF document (line:0 col:0 offset=0): No PDF header found
+Stack: Error: Failed to parse PDF document (line:0 col:0 offset=0): No PDF header found
+    at MissingPDFHeaderError.PDFParsingError [as constructor] (C:\xampp\htdocs\Unifi_pdf_JS\node_modules\pdf-lib\cjs\core\errors.js:229:24)
+    at new MissingPDFHeaderError (C:\xampp\htdocs\Unifi_pdf_JS\node_modules\pdf-lib\cjs\core\errors.js:306:24)
+    at PDFParser.parseHeader (C:\xampp\htdocs\Unifi_pdf_JS\node_modules\pdf-lib\cjs\core\parser\PDFParser.js:101:15)
+    at PDFParser.<anonymous> (C:\xampp\htdocs\Unifi_pdf_JS\node_modules\pdf-lib\cjs\core\parser\PDFParser.js:49:52)
+    at step (C:\xampp\htdocs\Unifi_pdf_JS\node_modules\tslib\tslib.js:141:27)
+    at Object.next (C:\xampp\htdocs\Unifi_pdf_JS\node_modules\tslib\tslib.js:122:57)
+    at C:\xampp\htdocs\Unifi_pdf_JS\node_modules\tslib\tslib.js:115:75
+    at new Promise (<anonymous>)
+    at Object.__awaiter (C:\xampp\htdocs\Unifi_pdf_JS\node_modules\tslib\tslib.js:111:16)
+    at PDFParser.parseDocument (C:\xampp\htdocs\Unifi_pdf_JS\node_modules\pdf-lib\cjs\core\parser\PDFParser.js:40:24)

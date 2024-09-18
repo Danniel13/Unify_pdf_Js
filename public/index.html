@@ -6,38 +6,14 @@
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
     <title>Unificar y Proteger PDFs</title>
 
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/index.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
 
-    <style>
-        #fileList {
-            list-style-type: none;
-            padding: 0;
-        }
-        #fileList li {
-            margin: 5px 0;
-            padding: 5px;
-            border: 1px solid #ccc;
-            border-radius: 3px;
-            cursor: move;
-        }
-        @font-face {
-    font-family: 'Telegraf';
-    src: url('Fonts/PPTelegraf-Regular.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
-     }
-    
-    @font-face {
-    font-family: 'Telegraf';
-    src: url('Fonts/PPTelegraf-UltraBold.otf') format('opentype');
-    font-weight: bold;
-    font-style: normal;
-     }
-    </style>
+ 
 </head>
 <body>
     <div class="container">
@@ -52,22 +28,7 @@
             <input type="checkbox" name="check_mostrar"  onclick='handleClick(this);'>Mostrar contraseña<br>
             </form>
 
-            <script>
-            //     $('#passwordInput').on("mousedown",function(event) {
-            // $(this).attr("type","text");
-            // });
-
-            // $('#passwordInput').on("mouseup",function(event) {
-            // $('#passwordInput').attr("type","password");
-            // });
-            function handleClick(cb) {
-            if(cb.checked)
-                $('#passwordInput').attr("type","text");
-            else
-                $('#passwordInput').attr("type","password");
-            }
-            </script>
-            
+                        
             <br>
             <button id="mergeButton">Unir y Proteger PDFs</button>
             <br><br>
@@ -75,87 +36,6 @@
             <ul id="fileList"></ul>
         </div>
     </div>
-    <script>
-        document.getElementById('fileInput').addEventListener('change', handleFileSelect);
-        document.getElementById('mergeButton').addEventListener('click', mergePDFs);
-
-        function handleFileSelect(event) {
-            const fileList = document.getElementById('fileList');
-            fileList.innerHTML = '';  // Clear previous list
-            const files = event.target.files;
-            Array.from(files).forEach((file, index) => {
-                const li = document.createElement('li');
-                li.textContent = file.name;
-                li.dataset.fileIndex = index;
-                fileList.appendChild(li);
-            });
-
-            // Initialize drag and drop
-            new Sortable(fileList, {
-                animation: 150,
-                onEnd: function(evt) {
-                    const items = fileList.querySelectorAll('li');
-                    items.forEach((item, index) => {
-                        item.dataset.fileIndex = index;
-                    });
-                }
-            });
-        }
-
-        async function mergePDFs(event) {
-            const fileInput = document.getElementById('fileInput');
-            const fileList = document.getElementById('fileList');
-            const passwordInput = document.getElementById('passwordInput');
-            const files = fileInput.files;
-
-            if (files.length === 0) {
-                alert('No se han seleccionado archivos');
-                return;
-            }
-
-            const formData = new FormData();
-            const fileOrder = Array.from(fileList.children)
-                .map(li => parseInt(li.dataset.fileIndex));
-
-            // Añadir el orden de los archivos al formData
-            formData.append('fileOrder', JSON.stringify(fileOrder));
-
-            // Añadir los archivos seleccionados al formData en el orden correcto
-            fileOrder.forEach(index => formData.append('pdfFiles', files[index]));
-
-            // Añadir la contraseña (si se introdujo) al formData
-            if (passwordInput.value) {
-                formData.append('password', passwordInput.value);
-            }
-
-            // Enviar los archivos y la contraseña al servidor para unir y proteger
-            try {
-                const response = await fetch('/unify-protect', {
-                    method: 'POST',
-                    body: formData
-                });
-
-                if (response.ok) {
-                    const blob = await response.blob();
-                    const url = URL.createObjectURL(blob);
-
-                    // Crear y hacer clic en un enlace para descargar el PDF protegido
-                    const link = document.createElement('a');
-                    link.href = url;
-                    link.download = 'protected_merged.pdf';
-                    document.body.appendChild(link);
-                    link.click();
-                    document.body.removeChild(link);
-                    alert('PDF unificado y protegido descargado correctamente.');
-                    location.href ='index.html';
-                } else {
-                    alert('Hubo un problema al unificar o proteger los PDFs.');
-                }
-            } catch (error) {
-                console.error('Error al unificar o proteger PDFs:', error);
-                alert('Hubo un error en el proceso.');
-            }
-        }
-    </script>
+   
 </body>
 </html>

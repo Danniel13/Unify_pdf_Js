@@ -170,3 +170,28 @@
 2024-09-18T01:32:23.272Z - Unificación completada: C:\xampp\htdocs\Unifi_pdf_JS\public\merged_1726623143271.pdf
 2024-09-18T01:32:23.272Z - Intentando proteger el PDF con contraseña: 123
 2024-09-18T01:32:23.517Z - Protección del PDF completada, para los archivos: 4.pdf, Con la clave: 123,   C:\xampp\htdocs\Unifi_pdf_JS\public\protected_merged_1726623143272.pdf
+2024-09-18T17:03:35.280Z - Servidor ejecutándose en http://localhost:3000
+2024-09-18T17:03:52.681Z - Archivos subidos: 1.pdf, 2.pdf
+2024-09-18T17:03:52.682Z - Orden de archivos: 0, 1
+2024-09-18T17:03:52.730Z - Unificación completada: C:\xampp\htdocs\Unifi_pdf_JS\public\merged_1726679032728.pdf
+2024-09-18T17:03:52.731Z - Intentando proteger el PDF con contraseña: 123
+2024-09-18T17:03:53.198Z - Protección del PDF completada, para los archivos: 1.pdf, 2.pdf, Con la clave: 123,   C:\xampp\htdocs\Unifi_pdf_JS\public\protected_merged_1726679032731.pdf
+2024-09-18T17:08:34.163Z - Servidor ejecutándose en http://localhost:3000
+2024-09-18T17:20:44.358Z - Archivos subidos: 1.pdf, 2.pdf
+2024-09-18T17:20:44.361Z - Orden de archivos: 0, 1
+2024-09-18T17:20:44.428Z - Unificación completada: C:\xampp\htdocs\Unifi_pdf_JS\public\merged_1726680044425.pdf
+2024-09-18T17:20:44.429Z - Intentando proteger el PDF con contraseña: 123
+2024-09-18T17:20:44.783Z - Protección del PDF completada, para los archivos: 1.pdf, 2.pdf, Con la clave: 123,   C:\xampp\htdocs\Unifi_pdf_JS\public\protected_merged_1726680044429.pdf
+2024-09-18T17:32:43.854Z - Servidor ejecutándose en http://localhost:3000
+2024-09-18T17:34:59.525Z - Archivos subidos: 2.pdf, 3.pdf, 4.pdf
+2024-09-18T17:34:59.526Z - Orden de archivos: 0, 1, 2
+2024-09-18T17:34:59.580Z - Unificación completada: C:\xampp\htdocs\Unifi_pdf_JS\public\merged_1726680899579.pdf
+2024-09-18T17:34:59.581Z - PDF generado sin contraseña para los archivos: 2.pdf, 3.pdf, 4.pdf
+2024-09-18T17:35:09.190Z - Archivos subidos: 1.pdf, 2.pdf, 3.pdf
+2024-09-18T17:35:09.191Z - Orden de archivos: 0, 1, 2
+2024-09-18T17:35:09.214Z - Unificación completada: C:\xampp\htdocs\Unifi_pdf_JS\public\merged_1726680909213.pdf
+2024-09-18T17:35:09.215Z - Intentando proteger el PDF con contraseña: 321
+2024-09-18T17:35:09.604Z - Protección del PDF completada, para los archivos: 1.pdf, 2.pdf, 3.pdf, Con la clave: 321,   C:\xampp\htdocs\Unifi_pdf_JS\public\protected_merged_1726680909215.pdf
+2024-09-18T17:37:21.901Z - Archivos subidos: 1.docx
+2024-09-18T17:37:21.901Z - Orden de archivos: 0
+2024-09-18T17:37:21.908Z - Error al unificar o proteger los PDFs: Failed to parse PDF document (line:0 col:0 offset=0): No PDF header found
