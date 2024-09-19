@@ -15,7 +15,9 @@ document.addEventListener("DOMContentLoaded", function(){
         
                 document.getElementById('fileInput').addEventListener('change', handleFileSelect);
                 document.getElementById('mergeButton').addEventListener('click', mergePDFs);
-        
+
+
+                //Organiza PDF
                 function handleFileSelect(event) {
                     const fileList = document.getElementById('fileList');
                     fileList.innerHTML = '';  // Clear previous list
@@ -38,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function(){
                         }
                     });
                 }
-        
+                //Unfifica
                 async function mergePDFs(event) {
                     const fileInput = document.getElementById('fileInput');
                     const fileList = document.getElementById('fileList');
