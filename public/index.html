@@ -1,19 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <!-- Mantén las configuraciones que ya tienes -->
     <title>Unificar y Proteger PDFs</title>
-
     <link rel="stylesheet" href="./css/style.css">
     <script src="./js/index.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-
-
- 
+    <!-- Librería para ordenar elementos -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
 </head>
 <body>
     <div class="container">
@@ -21,21 +16,16 @@
         <div id="pdfForm">
             <label>Selecciona archivos PDF:</label>
             <input type="file" id="fileInput" multiple accept="application/pdf" />
+            <ul id="fileList"></ul> <!-- Lista ordenable -->
             <br>
             <form>
-            <label for="password">Opcional: Introduce una contraseña para proteger el PDF</label>
-            <input type="password" id="passwordInput" autocomplete="off" placeholder="Contraseña (opcional)" />
-            <input type="checkbox" name="check_mostrar"  onclick='handleClick(this);'>Mostrar contraseña<br>
+                <label for="password">Opcional: Introduce una contraseña para proteger el PDF</label>
+                <input type="password" id="passwordInput" autocomplete="off" placeholder="Contraseña (opcional)" />
+                <input type="checkbox" name="check_mostrar" onclick='handleClick(this);'>Mostrar contraseña<br>
             </form>
-
-                        
             <br>
             <button id="mergeButton">Unir y Proteger PDFs</button>
-            <br><br>
-            <label for="text"><b>Elige el orden en que quieres tus PDFs:</b></label>
-            <ul id="fileList"></ul>
         </div>
     </div>
-   
 </body>
 </html>
