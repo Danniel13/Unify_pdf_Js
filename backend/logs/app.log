@@ -37,3 +37,9 @@
 2024-09-25T02:21:29.994Z - Se ha recibido una solicitud para unificar PDFs: 1.pdf, 2.pdf, EXTRACTOS CIFRADO - CLAVE-1088239599.pdf, Endoso 081004988375.pdf, Certificado 081004988375.pdf, 3.pdf, Resultados examenes Lina Marcela Giraldo Alvarez.pdf, 4.pdf, 081004988375.pdf
 2024-09-25T02:21:29.996Z - Archivos subidos: 1.pdf, 2.pdf, EXTRACTOS CIFRADO - CLAVE-1088239599.pdf, Endoso 081004988375.pdf, Certificado 081004988375.pdf, 3.pdf, Resultados examenes Lina Marcela Giraldo Alvarez.pdf, 4.pdf, 081004988375.pdf
 2024-09-25T02:21:30.019Z - Error al unificar o proteger los PDFs: Input document to `PDFDocument.load` is encrypted. You can use `PDFDocument.load(..., { ignoreEncryption: true })` if you wish to load the document anyways.
+2024-09-25T23:36:48.321Z - Servidor ejecutándose en http://localhost:3000
+2024-09-25T23:36:58.439Z - Se ha recibido una solicitud para unificar PDFs: 2.pdf, 3.pdf
+2024-09-25T23:36:58.440Z - Archivos subidos: 2.pdf, 3.pdf
+2024-09-25T23:36:58.495Z - Unificación completada: C:\xampp\htdocs\Unifi_pdf_JS\backend\merged_1727307418494.pdf
+2024-09-25T23:36:58.496Z - Intentando proteger el PDF con contraseña: 123
+2024-09-25T23:36:59.120Z - Protección del PDF completada: C:\xampp\htdocs\Unifi_pdf_JS\backend\protected_merged_1727307418496.pdf
