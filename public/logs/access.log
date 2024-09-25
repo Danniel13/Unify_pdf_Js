@@ -34,3 +34,7 @@
 ::1 - - [22/Sep/2024:04:04:35 +0000] "GET /index.html HTTP/1.1" 304 - "http://localhost:3000/index.html" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36"
 ::1 - - [22/Sep/2024:04:04:35 +0000] "GET /css/style.css HTTP/1.1" 304 - "http://localhost:3000/index.html" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36"
 ::1 - - [22/Sep/2024:04:04:35 +0000] "GET /js/index.js HTTP/1.1" 304 - "http://localhost:3000/index.html" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36"
+::1 - - [25/Sep/2024:00:59:36 +0000] "POST /api/pdf/unify HTTP/1.1" 200 9087 "http://localhost/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36"
+::1 - - [25/Sep/2024:01:02:43 +0000] "POST /api/pdf/unify HTTP/1.1" 200 9058 "http://localhost/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36"
+::1 - - [25/Sep/2024:01:03:20 +0000] "POST /api/pdf/unify HTTP/1.1" 200 9059 "http://localhost/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36"
+::1 - - [25/Sep/2024:01:07:12 +0000] "POST /api/pdf/unify HTTP/1.1" 200 34488 "http://localhost/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36"

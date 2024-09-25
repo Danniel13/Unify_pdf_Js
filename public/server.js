@@ -5,9 +5,14 @@ const path = require('path');
 const morgan = require('morgan');
 const { exec } = require('child_process');
 const PDFLib = require('pdf-lib');  // Para la unificación
-
+const cors = require('cors');
 const app = express();
 const upload = multer({ dest: 'uploads/' });
+
+
+//Habilitar CORS
+app.use(cors());
+
 
 // LOGS:
 const logDirectory = path.join(__dirname, 'logs');
@@ -66,9 +71,11 @@ app.get('/', (req, res) => {
 });
 
 // Ruta para manejar la subida de PDF, unificación y protección
-app.post('/unify-protect', upload.array('pdfFiles', 10), async (req, res) => {
+app.post('/api/pdf/unify', upload.array('pdfFiles', 10), async (req, res) => {
     const password = req.body.password || '';
+    log(`Se ha recibido una solicitud para unificar PDFs: ${req.files.map(file => file.originalname).join(', ')}`);
     log(`Archivos subidos: ${req.files.map(file => file.originalname).join(', ')}`);
+    
 
     try {
         const pdfDocs = [];

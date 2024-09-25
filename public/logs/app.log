@@ -17,3 +17,19 @@
 2024-09-22T04:04:30.962Z - Unificación completada: C:\xampp\htdocs\Unifi_pdf_JS\public\merged_1726977870961.pdf
 2024-09-22T04:04:30.966Z - Intentando proteger el PDF con contraseña: sadasd
 2024-09-22T04:04:31.122Z - Protección del PDF completada: C:\xampp\htdocs\Unifi_pdf_JS\public\protected_merged_1726977870966.pdf
+2024-09-25T00:58:04.928Z - Servidor ejecutándose en http://localhost:3000
+2024-09-25T00:58:14.128Z - Servidor ejecutándose en http://localhost:3000
+2024-09-25T00:59:36.545Z - Archivos subidos: 2.pdf
+2024-09-25T00:59:36.589Z - Unificación completada: C:\xampp\htdocs\Unifi_pdf_JS\public\merged_1727225976582.pdf
+2024-09-25T00:59:36.590Z - PDF generado sin contraseña para los archivos: 2.pdf
+2024-09-25T01:02:43.873Z - Archivos subidos: 3.pdf
+2024-09-25T01:02:43.889Z - Unificación completada: C:\xampp\htdocs\Unifi_pdf_JS\public\merged_1727226163887.pdf
+2024-09-25T01:02:43.890Z - PDF generado sin contraseña para los archivos: 3.pdf
+2024-09-25T01:03:01.748Z - Servidor ejecutándose en http://localhost:3000
+2024-09-25T01:03:20.637Z - Archivos subidos: 3.pdf
+2024-09-25T01:03:20.699Z - Unificación completada: C:\xampp\htdocs\Unifi_pdf_JS\public\merged_1727226200697.pdf
+2024-09-25T01:03:20.700Z - PDF generado sin contraseña para los archivos: 3.pdf
+2024-09-25T01:07:12.240Z - Archivos subidos: 3.pdf, 4.pdf, 2.pdf, 1.pdf
+2024-09-25T01:07:12.281Z - Unificación completada: C:\xampp\htdocs\Unifi_pdf_JS\public\merged_1727226432280.pdf
+2024-09-25T01:07:12.282Z - Intentando proteger el PDF con contraseña: 123
+2024-09-25T01:07:12.798Z - Protección del PDF completada: C:\xampp\htdocs\Unifi_pdf_JS\public\protected_merged_1727226432282.pdf
