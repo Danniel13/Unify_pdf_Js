@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 link.click();
                 document.body.removeChild(link);
                 alert('PDF unificado y protegido descargado correctamente.');
-                
+                window.location.href = "index.html";
             } else {
                 alert('Hubo un problema al unificar o proteger los PDFs.');
             }
