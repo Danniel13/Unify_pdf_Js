@@ -79,3 +79,8 @@ The application implements error handling to catch and log any issues that arise
    ```bash
    git clone https://github.com/Danniel13/Unify_pdf_Js.git
    cd unify-protect-pdf
+
+
+---
+
+**By Danni_dev**
