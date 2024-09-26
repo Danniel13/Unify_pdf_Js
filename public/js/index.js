@@ -54,7 +54,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // Enviar los archivos y la contraseña al servidor para unir y proteger
         try {
-            const response = await fetch('http://localhost:3000/api/pdf/unify', {  // endpoint
+            const response = await fetch('http://localhost:3000/api/pdf/unify', {  // Ajustar ip y puerto endpoint
+            // const response = await fetch('http://192.168.0.21:3000/api/pdf/unify',{
                 method: 'POST',
                 body: formData
             });
@@ -72,7 +73,9 @@ document.addEventListener("DOMContentLoaded", function() {
                 link.click();
                 document.body.removeChild(link);
                 alert('PDF unificado y protegido descargado correctamente.');
-                window.location.href = "index.html";
+                // window.location.href = "index.html";
+                // Refresh
+                location. reload();
             } else {
                 alert('Hubo un problema al unificar o proteger los PDFs.');
             }

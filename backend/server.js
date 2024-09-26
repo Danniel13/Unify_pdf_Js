@@ -11,8 +11,12 @@ const upload = multer({ dest: 'uploads/' });
 
 
 //Habilitar CORS
-app.use(cors());
-
+app.use(cors({
+    origin: '*', // Ajusta esto según las necesidades de seguridad
+    methods: ['GET', 'POST'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    exposedHeaders: ['Content-Disposition'], // Exponer encabezados para la descarga
+}));
 
 // LOGS:
 const logDirectory = path.join(__dirname, 'logs');
@@ -62,10 +66,12 @@ process.on('unhandledRejection', (reason, promise) => {
 
 // Ruta completa al ejecutable qpdf
 const qpdfPath = 'C:\\ProgramData\\chocolatey\\bin\\qpdf.exe';  // Ajusta esta ruta según tu instalación
+// const qpdfPath = '/usr/bin/qpdf';  // Linux generalmente.
+
 
 app.use(express.static(__dirname));
 
-// Ruta para cargar el formulario
+// Ruta para cargar el formulario/LOCALMENTE
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
 });

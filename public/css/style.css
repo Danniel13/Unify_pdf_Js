@@ -1,36 +1,33 @@
- 
-        #fileList {
-            list-style-type: none;
-            padding: 0;
-        }
-        #fileList li {
-            margin: 5px 0;
-            padding: 5px;
-            border: 1px solid #ccc;
-            border-radius: 3px;
-            cursor: move;
-        }
-    @font-face {
+#fileList {
+    list-style-type: none;
+    padding: 0;
+}
+#fileList li {
+    margin: 5px 0;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    cursor: move;
+}
+@font-face {
     font-family: 'Telegraf';
     src: url('../Fonts/PPTelegraf-Regular.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
-     }
-    
-    @font-face {
+}
+
+@font-face {
     font-family: 'Telegraf';
     src: url('../Fonts/PPTelegraf-UltraBold.otf') format('opentype');
     font-weight: bold;
     font-style: normal;
-     }
-
+}
 
 body {
     margin: 0;
     padding: 0;
-    /* font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; */
     font-family: 'Telegraf', sans-serif;
-    background-image: url('https://public.likeu.co/Nutresa/zafiro/Likeu.jpg'); 
+    background-image: url('https://public.likeu.co/Nutresa/zafiro/Likeu.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -39,17 +36,16 @@ body {
     justify-content: center;
     align-items: center;
 }
+
 .container {
-    background-color: #f0f5f9; 
+    background-color: #f0f5f9;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); 
-    width: 30%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: 90%; /* Ajuste para pantallas pequeñas */
     max-width: 600px;
     text-align: center;
     opacity: 70%;
-   
-    
 }
 
 .file-list {
@@ -68,26 +64,27 @@ body {
     align-items: center;
     justify-content: space-between;
     font-size: small;
-    
-    
 }
-
 
 h1 {
     color: #333; /* Color del título */
 }
+
 #pdfForm {
     margin-top: 20px;
 }
+
 label {
     display: block;
     margin-bottom: 10px;
     color: #555; /* Color del texto del label */
 }
+
 input[type="file"] {
     margin-bottom: 10px;
     font-family: 'Telegraf', sans-serif;
 }
+
 #mergeButton {
     background-color: #007bff; /* Color de fondo azul */
     color: white; /* Color del texto */
@@ -97,8 +94,43 @@ input[type="file"] {
     cursor: pointer;
     border-radius: 5px;
     transition: background-color 0.3s ease;
-    
 }
+
 #mergeButton:hover {
     background-color: #0056b3; /* Color de fondo azul oscuro al pasar el ratón */
+}
+
+/* Media queries para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .container {
+        width: 80%; /* Ajuste de tamaño en pantallas medianas */
+    }
+
+    h1 {
+        font-size: 1.5em; /* Ajuste de tamaño de fuente del título */
+    }
+
+    #mergeButton {
+        padding: 8px 15px; /* Botón más pequeño en pantallas más pequeñas */
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 95%; /* Ajuste de tamaño en pantallas más pequeñas */
+    }
+
+    h1 {
+        font-size: 1.2em; /* Título más pequeño para móviles */
+    }
+
+    .file-list li {
+        font-size: smaller; /* Reducir el tamaño de las fuentes */
+    }
+
+    #mergeButton {
+        width: 100%; /* Botón de ancho completo en pantallas pequeñas */
+        font-size: 12px; /* Ajuste del tamaño del texto del botón */
+    }
 }

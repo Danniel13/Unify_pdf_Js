@@ -43,3 +43,31 @@
 2024-09-25T23:36:58.495Z - Unificación completada: C:\xampp\htdocs\Unifi_pdf_JS\backend\merged_1727307418494.pdf
 2024-09-25T23:36:58.496Z - Intentando proteger el PDF con contraseña: 123
 2024-09-25T23:36:59.120Z - Protección del PDF completada: C:\xampp\htdocs\Unifi_pdf_JS\backend\protected_merged_1727307418496.pdf
+2024-09-25T23:44:53.258Z - Se ha recibido una solicitud para unificar PDFs: 3.pdf
+2024-09-25T23:44:53.265Z - Archivos subidos: 3.pdf
+2024-09-25T23:44:53.288Z - Unificación completada: C:\xampp\htdocs\Unifi_pdf_JS\backend\merged_1727307893287.pdf
+2024-09-25T23:44:53.289Z - PDF generado sin contraseña para los archivos: 3.pdf
+2024-09-25T23:50:21.290Z - Se ha recibido una solicitud para unificar PDFs: 4.pdf
+2024-09-25T23:50:21.296Z - Archivos subidos: 4.pdf
+2024-09-25T23:50:21.315Z - Unificación completada: C:\xampp\htdocs\Unifi_pdf_JS\backend\merged_1727308221314.pdf
+2024-09-25T23:50:21.317Z - PDF generado sin contraseña para los archivos: 4.pdf
+2024-09-25T23:50:35.587Z - Se ha recibido una solicitud para unificar PDFs: 4.pdf
+2024-09-25T23:50:35.588Z - Archivos subidos: 4.pdf
+2024-09-25T23:50:35.597Z - Unificación completada: C:\xampp\htdocs\Unifi_pdf_JS\backend\merged_1727308235596.pdf
+2024-09-25T23:50:35.598Z - PDF generado sin contraseña para los archivos: 4.pdf
+2024-09-25T23:52:32.893Z - Servidor ejecutándose en http://localhost:3000
+2024-09-26T00:30:17.501Z - Servidor ejecutándose en http://localhost:3000
+2024-09-26T01:20:51.275Z - Se ha recibido una solicitud para unificar PDFs: 1.pdf, 3.pdf, 2.pdf
+2024-09-26T01:20:51.287Z - Archivos subidos: 1.pdf, 3.pdf, 2.pdf
+2024-09-26T01:20:51.336Z - Unificación completada: C:\xampp\htdocs\Unifi_pdf_JS\backend\merged_1727313651334.pdf
+2024-09-26T01:20:51.337Z - Intentando proteger el PDF con contraseña: 123
+2024-09-26T01:20:51.934Z - Protección del PDF completada: C:\xampp\htdocs\Unifi_pdf_JS\backend\protected_merged_1727313651337.pdf
+2024-09-26T01:21:21.946Z - Se ha recibido una solicitud para unificar PDFs: EXTRACTOS CIFRADO - CLAVE-1088239599.pdf
+2024-09-26T01:21:21.949Z - Archivos subidos: EXTRACTOS CIFRADO - CLAVE-1088239599.pdf
+2024-09-26T01:21:21.993Z - Error al unificar o proteger los PDFs: Input document to `PDFDocument.load` is encrypted. You can use `PDFDocument.load(..., { ignoreEncryption: true })` if you wish to load the document anyways.
+2024-09-26T01:22:14.961Z - Se ha recibido una solicitud para unificar PDFs: 3.docx
+2024-09-26T01:22:14.962Z - Archivos subidos: 3.docx
+2024-09-26T01:22:14.968Z - Error al unificar o proteger los PDFs: Failed to parse PDF document (line:0 col:0 offset=0): No PDF header found
+2024-09-26T01:22:34.828Z - Se ha recibido una solicitud para unificar PDFs: Resultados examenes Lina Marcela Giraldo Alvarez.pdf
+2024-09-26T01:22:34.829Z - Archivos subidos: Resultados examenes Lina Marcela Giraldo Alvarez.pdf
+2024-09-26T01:22:34.839Z - Error al unificar o proteger los PDFs: Input document to `PDFDocument.load` is encrypted. You can use `PDFDocument.load(..., { ignoreEncryption: true })` if you wish to load the document anyways.
