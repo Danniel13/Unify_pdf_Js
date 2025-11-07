@@ -1,0 +1,15 @@
+2025-09-02T19:06:25.883Z - Servidor ejecutándose en http://localhost:3000
+2025-09-02T19:06:57.832Z - Se ha recibido una solicitud para unificar PDFs: 4F.pdf
+2025-09-02T19:06:57.833Z - Archivos subidos: 4F.pdf
+2025-09-02T19:06:57.952Z - Unificación completada: C:\xampp\htdocs\Unifi_pdf_JS\backend\merged_1756840017950.pdf
+2025-09-02T19:06:57.953Z - PDF generado sin contraseña para los archivos: 4F.pdf
+2025-09-02T19:07:24.276Z - Se ha recibido una solicitud para unificar PDFs: 2.pdf, 4F.pdf, Certificado de Viaje Natalia MuÃ±os F.pdf
+2025-09-02T19:07:24.277Z - Archivos subidos: 2.pdf, 4F.pdf, Certificado de Viaje Natalia MuÃ±os F.pdf
+2025-09-02T19:07:24.474Z - Unificación completada: C:\xampp\htdocs\Unifi_pdf_JS\backend\merged_1756840044472.pdf
+2025-09-02T19:07:24.474Z - Intentando proteger el PDF con contraseña: 123
+2025-09-02T19:07:25.481Z - Protección del PDF completada: C:\xampp\htdocs\Unifi_pdf_JS\backend\protected_merged_1756840044474.pdf
+2025-09-02T19:09:56.762Z - Se ha recibido una solicitud para unificar PDFs: 2.pdf, 4F.pdf, Certificado de Viaje Natalia MuÃ±os F.pdf
+2025-09-02T19:09:56.765Z - Archivos subidos: 2.pdf, 4F.pdf, Certificado de Viaje Natalia MuÃ±os F.pdf
+2025-09-02T19:09:57.031Z - Unificación completada: C:\xampp\htdocs\Unifi_pdf_JS\backend\merged_1756840197029.pdf
+2025-09-02T19:09:57.031Z - Intentando proteger el PDF con contraseña: 123
+2025-09-02T19:09:57.278Z - Protección del PDF completada: C:\xampp\htdocs\Unifi_pdf_JS\backend\protected_merged_1756840197031.pdf

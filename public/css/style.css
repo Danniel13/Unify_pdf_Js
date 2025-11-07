@@ -1,14 +1,37 @@
+/* === LISTA DE ARCHIVOS === */
 #fileList {
     list-style-type: none;
     padding: 0;
+    margin-top: 15px;
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
 #fileList li {
     margin: 5px 0;
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
+    padding: 8px 12px;
+    border: 1px solid rgba(178, 255, 251, 0.3);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    color: #eafdfb;
     cursor: move;
+    font-size: 0.9em;
+    font-weight: 500;
+    width: 70%;
+    max-width: 360px;
+    text-align: center;
+    transition: all 0.3s ease;
 }
+
+#fileList li:hover {
+    transform: scale(1.02);
+    background: rgba(178, 255, 251, 0.15);
+    box-shadow: 0 0 10px rgba(178, 255, 251, 0.3);
+}
+
+/* === FUENTE === */
 @font-face {
     font-family: 'Telegraf';
     src: url('../Fonts/PPTelegraf-Regular.otf') format('opentype');
@@ -23,114 +46,182 @@
     font-style: normal;
 }
 
+/* === FONDO GENERAL === */
 body {
     margin: 0;
-    padding: 0;
+    padding: 60px 0; /* 🔹 agrega espacio arriba y abajo */
     font-family: 'Telegraf', sans-serif;
-    background-image: url('https://public.likeu.co/Nutresa/zafiro/Likeu.jpg');
+    background-image: url('https://public.likeu.co/Nutresa/zafiro/likeu2.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 100vh;
+    min-height: 100vh; /* 🔹 deja que crezca más allá de la pantalla */
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start; /* 🔹 alinea arriba, pero con padding */
 }
 
+/* === CONTENEDOR EFECTO GLASS === */
 .container {
-    background-color: #f0f5f9;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    width: 90%; /* Ajuste para pantallas pequeñas */
+    background: linear-gradient(145deg, rgba(30, 30, 30, 0.75), rgba(20, 20, 20, 0.6));
+    backdrop-filter: blur(14px) saturate(180%);
+    -webkit-backdrop-filter: blur(14px) saturate(180%);
+    border: 1px solid rgba(178, 255, 251, 0.2);
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+    padding: 40px;
+    width: 90%;
     max-width: 600px;
     text-align: center;
-    opacity: 70%;
+    color: #dffffb;
+    animation: fadeIn 0.8s ease;
 }
 
-.file-list {
-    list-style: none;
-    padding: 0;
-    margin: 10px 0;
-}
-.file-list li {
-    margin: 5px 0;
-    padding: 10px;
-    border: 1px solid #ddd;
-    background-color: #f9f9f9;
-    cursor: move;
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-size: small;
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
+/* === TÍTULO === */
 h1 {
-    color: #333; /* Color del título */
-}
-
-#pdfForm {
-    margin-top: 20px;
+    font-size: 1.9em;
+    font-weight: 700;
+    color: #b2fffb;
+    letter-spacing: 0.5px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+    margin-bottom: 25px;
 }
 
 label {
+    color: #b2fffb;
+    font-weight: 500;
+    margin-bottom: 8px;
     display: block;
-    margin-bottom: 10px;
-    color: #555; /* Color del texto del label */
 }
 
+/* === INPUTS === */
+input[type="file"],
+input[type="password"],
+input[type="text"] {
+    margin-bottom: 12px;
+    font-family: sans-serif;
+    background: rgba(255, 255, 255, 0.08);
+    color: #b2fffb;
+    border: 1px solid rgba(178, 255, 251, 0.3);
+    padding: 8px 12px;
+    border-radius: 8px;
+    width: 70%;
+    max-width: 300px;
+    transition: all 0.3s ease;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* === INPUT FILE === */
 input[type="file"] {
-    margin-bottom: 10px;
-    font-family: 'Telegraf', sans-serif;
+    cursor: pointer;
+    font-size: 0.9em;
 }
 
-#mergeButton {
-    background-color: #007bff; /* Color de fondo azul */
-    color: white; /* Color del texto */
+input[type="file"]:hover,
+input[type="file"]:focus,
+input[type="password"]:hover,
+input[type="password"]:focus,
+input[type="text"]:hover,
+input[type="text"]:focus {
+    box-shadow: 0 0 10px rgba(178, 255, 251, 0.4);
+    border-color: rgba(178, 255, 251, 0.6);
+    outline: none;
+}
+
+/* === BOTÓN DEL INPUT FILE === */
+input[type="file"]::-webkit-file-upload-button,
+input[type="file"]::file-selector-button {
+    background: linear-gradient(135deg, #0f0f0f, #2c2c2c);
+    color: #b2fffb;
     border: none;
-    padding: 10px 20px;
+    border-radius: 30px;
+    padding: 6px 18px;
+    font-weight: 600;
+    margin-right: 8px;
+    transition: all 0.3s ease;
+}
+
+input[type="file"]::-webkit-file-upload-button:hover,
+input[type="file"]::file-selector-button:hover {
+    background: linear-gradient(135deg, #000, #202020);
+    box-shadow: 0 0 10px rgba(178, 255, 251, 0.5);
+}
+
+/* Placeholder */
+input::placeholder {
+    color: rgba(234, 253, 251, 0.6);
+}
+
+/* === CHECKBOX === */
+input[type="checkbox"] {
+    transform: scale(1.1);
+    accent-color: #b2fffb;
+}
+
+/* === BOTÓN PRINCIPAL === */
+#mergeButton {
+    background: linear-gradient(135deg, #101010, #303030);
+    color: #b2fffb;
+    border: none;
+    padding: 12px 30px;
     font-size: 16px;
+    font-weight: 600;
     cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+    margin-top: 15px;
 }
 
 #mergeButton:hover {
-    background-color: #0056b3; /* Color de fondo azul oscuro al pasar el ratón */
+    background: linear-gradient(135deg, #000, #202020);
+    box-shadow: 0 0 18px rgba(178, 255, 251, 0.7);
+    transform: translateY(-2px);
 }
 
-/* Media queries para pantallas más pequeñas */
+#mergeButton:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* === RESPONSIVIDAD === */
 @media (max-width: 768px) {
     .container {
-        width: 80%; /* Ajuste de tamaño en pantallas medianas */
+        width: 85%;
+        padding: 25px;
     }
-
     h1 {
-        font-size: 1.5em; /* Ajuste de tamaño de fuente del título */
+        font-size: 1.6em;
     }
-
-    #mergeButton {
-        padding: 8px 15px; /* Botón más pequeño en pantallas más pequeñas */
-        font-size: 14px;
+    input[type="file"],
+    input[type="password"],
+    input[type="text"] {
+        width: 80%;
     }
 }
 
 @media (max-width: 480px) {
     .container {
-        width: 95%; /* Ajuste de tamaño en pantallas más pequeñas */
+        width: 95%;
+        padding: 20px;
     }
-
     h1 {
-        font-size: 1.2em; /* Título más pequeño para móviles */
+        font-size: 1.3em;
     }
-
-    .file-list li {
-        font-size: smaller; /* Reducir el tamaño de las fuentes */
-    }
-
     #mergeButton {
-        width: 100%; /* Botón de ancho completo en pantallas pequeñas */
-        font-size: 12px; /* Ajuste del tamaño del texto del botón */
+        width: 100%;
+        font-size: 14px;
+    }
+    input[type="file"],
+    input[type="password"],
+    input[type="text"] {
+        width: 90%;
     }
 }
